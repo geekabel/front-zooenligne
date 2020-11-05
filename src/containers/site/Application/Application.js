@@ -18,9 +18,13 @@ class Application extends Component {
         const continent = this.state.filtreContinent ? this.state.filtreContinent :"-1";
         axios.get(`http://localhost/Projetfinal/serveurAnimaux/front/animaux/${famille}/${continent}`)
         .then(response => {
-            this.setState({animaux :Object.values(response.data) })
-            //console.log(response.data);
-})
+            this.setState({ animaux: Object.values(response.data) });
+              //console.log(response.data);
+           
+    })
+    .catch(err => {
+        console.log(err.response);
+  })
    }
     
    componentDidMount =() => {
@@ -162,7 +166,7 @@ class Application extends Component {
                         this.state.animaux &&
                         this.state.animaux.map(animal => {
                             return (
-                                <div className="col-12 col-md-6 col-xl-4" key={animal.id}>
+                                <div className="col-12 col-md-6 col-xl-4" key={animal.id} >
                                     <Animal {...animal}  filtreFamille={this.handleSelectionFamille} 
                                             filtreContinent = {this.handleSelectionContinent}
                                       />

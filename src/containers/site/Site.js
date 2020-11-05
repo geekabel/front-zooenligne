@@ -3,7 +3,6 @@ import Navbar from "../../components/UI/Navbar/NavBar";
 import {Switch,Route} from "react-router-dom";
 import Accueil from "./Accueil/Accueil";
 //import Error from "../../components/Error/Error";
-import CustomError from "../../components/Error/Error404";
 import Footer from "../../components/Footer/Footer";
 import Application from "./Application/Application";
 import Contact from "./Contact/Contact";
